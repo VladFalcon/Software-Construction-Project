@@ -35,6 +35,14 @@ class ListModel extends EventEmitter {
             this.selectedIndex = -1;
         }
     }
+    // changeItemAt(index){
+    //     const item = this._items.splice(index, 1)[0];
+    //     this.emit('itemChanged', item);
+    //     if (index === this._selectedIndex) {
+    //         this.selectedIndex = -1;
+    //     }
+    // }
+
 
     get selectedIndex () {
         return this._selectedIndex;
@@ -55,7 +63,8 @@ class ListView extends EventEmitter {
 
         // attach model listeners
         model.on('itemAdded', () => this.rebuildList())
-            .on('itemRemoved', () => this.rebuildList());
+            .on('itemRemoved', () => this.rebuildList())
+            .on('itemChanged',()=> this.rebuildList());
 
         // attach listeners to HTML controls
         elements.list.addEventListener('change',
@@ -64,11 +73,16 @@ class ListView extends EventEmitter {
             () => this.emit('addButtonClicked'));
         elements.delButton.addEventListener('click',
             () => this.emit('delButtonClicked'));
+        // elements.changeButton.addEventListener('click',
+        //     () => this.emit('changeButtonClicked'));
     }
 
     show() {
         this.rebuildList();
     }
+
+    // changeProduct(){
+    // }
 
     rebuildList() {
         const list = this._elements.list;
@@ -88,6 +102,7 @@ class ListController {
         view.on('listModified', idx => this.updateSelected(idx));
         view.on('addButtonClicked', () => this.addItem());
         view.on('delButtonClicked', () => this.delItem());
+        // view.on('changeButtonClicked', () => this.changeItem());
     }
 
     addItem() {
@@ -103,7 +118,13 @@ class ListController {
             this._model.removeItemAt(index);
         }
     }
-
+   /* changeItem(){
+        const index = this._model.selectedIndex;
+        if (index !== -1) {
+            this._model.changeItemAt(index);
+        }
+    }
+*/
     updateSelected(index) {
         this._model.selectedIndex = index;
     }
@@ -114,7 +135,8 @@ window.addEventListener('load', () => {
         view = new ListView(model, {
             'list' : document.getElementById('list'),
             'addButton' : document.getElementById('plusBtn'),
-            'delButton' : document.getElementById('minusBtn')
+            'delButton' : document.getElementById('minusBtn'),
+            // 'changeButton' : document.getElementById('changeBtn')
         }),
         controller = new ListController(model, view);
 
