@@ -1,0 +1,37 @@
+body {
+    background: url(../img/back.jpg) no-repeat;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+.products-list{
+    margin-top: 50px;
+   text-align: center;
+}
+.main_window{
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+h3{
+    background-color: gold;
+    font-size: 24px;
+    color: red;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#list{
+    background-color: rosybrown;
+    text-align: center;
+    margin: 0;
+    height: 300px;
+    width: 350px;
+}
+.button{
+    margin: 0;
+}
