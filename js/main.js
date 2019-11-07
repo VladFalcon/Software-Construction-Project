@@ -107,9 +107,14 @@ class ListController {
 
     addItem() {
         const item = window.prompt('Add item:', '');
-        if (item) {
-            this._model.addItem(item);
-        }
+       try {
+           if (item) {
+               this._model.addItem(item);
+           }
+       } catch (e) {
+           console.log('It`s empty! You must enter some product!');
+       }
+       
     }
 
     delItem() {
@@ -142,4 +147,6 @@ window.addEventListener('load', () => {
 
     view.show();
 });
+
+
 
