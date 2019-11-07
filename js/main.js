@@ -110,7 +110,7 @@ class ListController {
 }
 
 window.addEventListener('load', () => {
-    const model = new ListModel(['node.js', 'react']),
+    const model = new ListModel(['iphone 7 (300$)', 'iphone 8 (400$)', ' intel core i5 (200$)', " intel core i7 (350$)" , "iphone X (600$)"]),
         view = new ListView(model, {
             'list' : document.getElementById('list'),
             'addButton' : document.getElementById('plusBtn'),

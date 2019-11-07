@@ -23,15 +23,53 @@ h3{
     color: red;
     margin-top: 50px;
     text-align: center;
+    border-radius: 10px;
 }
 
 #list{
+
+    font-size: 24px;
+    font-weight: 400;
+    font-family: sans-serif;
+    color: mediumvioletred;
+    border-radius: 10px;
     background-color: rosybrown;
     text-align: center;
     margin: 0;
     height: 300px;
     width: 350px;
 }
-.button{
-    margin: 0;
+.buttons{
+    margin-top: 20px;
+}
+.button1{
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+}
+.button1:hover { background: rgb(53, 167, 110); }
+.button1:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
+.button2{
+    margin-left: 10px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background:  rgb(213,70,65);
+    box-shadow:  0 -3px rgb(250,90,110) inset;
+    transition: 0.2s;
+}
+.button2:hover { background:rgb(232,95,76); }
+.button2:active {
+    background: rgb(232,95,76);
+    box-shadow: 0 3px  rgb(152,15,0) inset;
 }
