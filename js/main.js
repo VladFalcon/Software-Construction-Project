@@ -110,7 +110,7 @@ class ListController {
        try {
            if (item) {
                this._model.addItem(item);
-           }
+           }else throw 'Error!'
        } catch (e) {
            console.log('It`s empty! You must enter some product!');
        }
